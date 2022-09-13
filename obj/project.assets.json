@@ -9,19 +9,19 @@
   },
   "packageFolders": {
     "C:\\Users\\varul\\.nuget\\packages\\": {},
-    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\0 - Programmering\\ITHS\\Fritt arbete\\DiceRoller\\DiceRoller.csproj",
+      "projectUniqueName": "C:\\Users\\varul\\Programmering\\Eget\\DiceRoller\\DiceRoller.csproj",
       "projectName": "DiceRoller",
-      "projectPath": "D:\\0 - Programmering\\ITHS\\Fritt arbete\\DiceRoller\\DiceRoller.csproj",
+      "projectPath": "C:\\Users\\varul\\Programmering\\Eget\\DiceRoller\\DiceRoller.csproj",
       "packagesPath": "C:\\Users\\varul\\.nuget\\packages\\",
-      "outputPath": "D:\\0 - Programmering\\ITHS\\Fritt arbete\\DiceRoller\\obj\\",
+      "outputPath": "C:\\Users\\varul\\Programmering\\Eget\\DiceRoller\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\varul\\AppData\\Roaming\\NuGet\\NuGet.Config",
