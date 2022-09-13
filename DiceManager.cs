@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,66 +10,85 @@ namespace DiceRoller
 {
     static class DiceRoller
     {
-        static public List<Dice> dices;
+        static private List<Dice> diceList = new List<Dice>();
+
+        static void AddDie(Dice dice, int amount)
+        {
+            diceList.Add(new Dice());
+        }
+
+        static void ClearDice()
+        {
+            diceList.Clear();
+        }
+
+        static int roll()
+        {
+            Random roll = new Random();
+            int total = 0;
+
+            foreach (Dice dice in diceList)
+            {
+                total =+ roll.Next(1, dice.sides);
+            }
+
+            return total;
+        }
     }
     public class Dice
     {
-        private int amount;
-        public Dice(int num)
-        {
-            this.amount = num;
-        }
-    }
-
-    public class D4 : Dice
-    {
-        private int sides = 4;
-
-        public D4(int amount) :base(amount)
+        internal int sides;
+        public Dice()
         {
             
         }
     }
 
+    public class D4 : Dice
+    {
+        public D4() :base()
+        {
+            base.sides = 4;
+        }
+    }
+
     public class D6 : Dice
     {
-        public int sides = 6;
-
-        public D6(int amount) : base(amount)
+        public D6() : base()
         {
-
+            base.sides = 6;
         }
     }
 
     public class D8: Dice
     {
-        public D8(int amount) : base(amount)
+        public D8() : base()
         {
-
+            base.sides = 8;
         }
     }
 
     public class D10: Dice
     {
-        public D10(int amount) : base(amount)
+        public D10() : base()
         {
-
+            base.sides = 10;
         }
     }
 
     public class D12: Dice
     {
-        public D12(int amount) : base(amount)
+        public D12() : base()
         {
-
+            base.sides = 12;
         }
     }
 
     public class D20: Dice
     {
-        public D20(int amount): base(amount)
+        public D20(): base()
         {
-
+            base.sides = 20;
         }
     }
 }
