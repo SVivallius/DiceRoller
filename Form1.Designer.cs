@@ -42,7 +42,10 @@
             this.amount_D20 = new System.Windows.Forms.Label();
             this.btn_Roll_Dice = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.result_lbl = new System.Windows.Forms.Label();
+            this.yourRoll = new System.Windows.Forms.Label();
+            this.listLabel = new System.Windows.Forms.Label();
+            this.ind_Rolls = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Add_D4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Add_D6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Add_D8)).BeginInit();
@@ -75,6 +78,7 @@
             this.pbx_Add_D6.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D6.TabIndex = 1;
             this.pbx_Add_D6.TabStop = false;
+            this.pbx_Add_D6.Click += new System.EventHandler(this.pbx_Add_D6_Click);
             // 
             // pbx_Add_D8
             // 
@@ -87,6 +91,7 @@
             this.pbx_Add_D8.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D8.TabIndex = 2;
             this.pbx_Add_D8.TabStop = false;
+            this.pbx_Add_D8.Click += new System.EventHandler(this.pbx_Add_D8_Click);
             // 
             // pbx_Add_D10
             // 
@@ -99,6 +104,7 @@
             this.pbx_Add_D10.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D10.TabIndex = 3;
             this.pbx_Add_D10.TabStop = false;
+            this.pbx_Add_D10.Click += new System.EventHandler(this.pbx_Add_D10_Click);
             // 
             // pbx_Add_D12
             // 
@@ -111,6 +117,7 @@
             this.pbx_Add_D12.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D12.TabIndex = 4;
             this.pbx_Add_D12.TabStop = false;
+            this.pbx_Add_D12.Click += new System.EventHandler(this.pbx_Add_D12_Click);
             // 
             // pbx_Add_D20
             // 
@@ -123,6 +130,7 @@
             this.pbx_Add_D20.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D20.TabIndex = 5;
             this.pbx_Add_D20.TabStop = false;
+            this.pbx_Add_D20.Click += new System.EventHandler(this.pbx_Add_D20_Click);
             // 
             // amount_D4
             // 
@@ -194,6 +202,7 @@
             this.btn_Roll_Dice.TabIndex = 13;
             this.btn_Roll_Dice.Text = "Roll!";
             this.btn_Roll_Dice.UseVisualStyleBackColor = true;
+            this.btn_Roll_Dice.Click += new System.EventHandler(this.btn_Roll_Dice_Click);
             // 
             // button1
             // 
@@ -207,23 +216,59 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // result_lbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(304, 172);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 65);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.result_lbl.AutoSize = true;
+            this.result_lbl.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.result_lbl.Location = new System.Drawing.Point(189, 223);
+            this.result_lbl.MinimumSize = new System.Drawing.Size(300, 0);
+            this.result_lbl.Name = "result_lbl";
+            this.result_lbl.Size = new System.Drawing.Size(300, 65);
+            this.result_lbl.TabIndex = 15;
+            this.result_lbl.Text = "0";
+            this.result_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // yourRoll
+            // 
+            this.yourRoll.AutoSize = true;
+            this.yourRoll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.yourRoll.Location = new System.Drawing.Point(296, 214);
+            this.yourRoll.Name = "yourRoll";
+            this.yourRoll.Size = new System.Drawing.Size(83, 21);
+            this.yourRoll.TabIndex = 16;
+            this.yourRoll.Text = "You rolled:";
+            // 
+            // listLabel
+            // 
+            this.listLabel.AutoSize = true;
+            this.listLabel.Location = new System.Drawing.Point(294, 20);
+            this.listLabel.Name = "listLabel";
+            this.listLabel.Size = new System.Drawing.Size(87, 15);
+            this.listLabel.TabIndex = 18;
+            this.listLabel.Text = "Individual rolls:";
+            // 
+            // ind_Rolls
+            // 
+            this.ind_Rolls.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ind_Rolls.Location = new System.Drawing.Point(135, 47);
+            this.ind_Rolls.MinimumSize = new System.Drawing.Size(400, 150);
+            this.ind_Rolls.Multiline = true;
+            this.ind_Rolls.Name = "ind_Rolls";
+            this.ind_Rolls.ReadOnly = true;
+            this.ind_Rolls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ind_Rolls.Size = new System.Drawing.Size(400, 150);
+            this.ind_Rolls.TabIndex = 19;
+            this.ind_Rolls.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 381);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ind_Rolls);
+            this.Controls.Add(this.listLabel);
+            this.Controls.Add(this.yourRoll);
+            this.Controls.Add(this.result_lbl);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Roll_Dice);
             this.Controls.Add(this.amount_D20);
@@ -273,6 +318,9 @@
         public Label amount_D20;
         private Button btn_Roll_Dice;
         private Button button1;
-        public Label label1;
+        public Label result_lbl;
+        private Label yourRoll;
+        private Label listLabel;
+        private TextBox ind_Rolls;
     }
 }

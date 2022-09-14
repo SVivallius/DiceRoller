@@ -11,11 +11,29 @@ namespace DiceRoller
 {
     static public class DiceRoller
     {
-        static private List<Dice> diceList = new List<Dice>();
+        static public List<Dice> diceList = new List<Dice>();
+        static public List<int> indivRolls = new List<int>();
+        static public int amtToAdd = 0;
 
         static public void AddDie(Dice dice)
         {
-            diceList.Add(dice);
+            for (int i = 0; i < amtToAdd; amtToAdd--)
+            {
+                diceList.Add(dice);
+            }
+        }
+
+        static public int CountDice(Dice selection)
+        {
+            int tempAmount = 0;
+            foreach(Dice die in diceList)
+            {
+                if (die.sides == selection.sides)
+                {
+                    tempAmount++;
+                }
+            }
+            return tempAmount;
         }
 
         static public void ClearDice()
@@ -23,14 +41,18 @@ namespace DiceRoller
             diceList.Clear();
         }
 
-        static public int roll()
+        static public int Roll()
         {
             Random roll = new Random();
             int total = 0;
+            indivRolls.Clear();
 
             foreach (Dice dice in diceList)
             {
-                total =+ roll.Next(1, dice.sides);
+                int thisRoll = roll.Next(1, (dice.sides + 1));
+
+                indivRolls.Add(thisRoll);
+                total += thisRoll;
             }
 
             return total;

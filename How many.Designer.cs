@@ -43,6 +43,7 @@
             this.OK.TabIndex = 0;
             this.OK.Text = "Ok!";
             this.OK.UseVisualStyleBackColor = true;
+            this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // cancel
             // 
@@ -53,13 +54,16 @@
             this.cancel.TabIndex = 1;
             this.cancel.Text = "Cancel";
             this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // tbx_amount_Entered
             // 
+            this.tbx_amount_Entered.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbx_amount_Entered.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbx_amount_Entered.Location = new System.Drawing.Point(10, 41);
             this.tbx_amount_Entered.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbx_amount_Entered.Name = "tbx_amount_Entered";
+            this.tbx_amount_Entered.PlaceholderText = "0";
             this.tbx_amount_Entered.Size = new System.Drawing.Size(241, 32);
             this.tbx_amount_Entered.TabIndex = 2;
             this.tbx_amount_Entered.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -77,19 +81,26 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.CancelButton = this.cancel;
             this.ClientSize = new System.Drawing.Size(262, 104);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbx_amount_Entered);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.OK);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(308, 160);
+            this.MaximumSize = new System.Drawing.Size(278, 143);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(278, 143);
             this.Name = "How_many";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "How much will this hurt?";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.How_many_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +110,7 @@
 
         private Button OK;
         private Button cancel;
-        private TextBox tbx_amount_Entered;
         private Label label1;
+        internal TextBox tbx_amount_Entered;
     }
 }
