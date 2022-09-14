@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace DiceRoller
 {
-    static class DiceRoller
+    static public class DiceRoller
     {
         static private List<Dice> diceList = new List<Dice>();
 
-        static void AddDie(Dice dice, int amount)
+        static public void AddDie(Dice dice)
         {
-            diceList.Add(new Dice());
+            diceList.Add(dice);
         }
 
-        static void ClearDice()
+        static public void ClearDice()
         {
             diceList.Clear();
         }
 
-        static int roll()
+        static public int roll()
         {
             Random roll = new Random();
             int total = 0;

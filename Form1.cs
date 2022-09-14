@@ -11,5 +11,15 @@ namespace DiceRoller
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DiceRoller.ClearDice();
+        }
+
+        private void pbx_Add_D4_Click(object sender, EventArgs e)
+        {
+            DialogResult fetchAmount = ShowDialog(new How_many());
+        }
     }
 }

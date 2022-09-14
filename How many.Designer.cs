@@ -36,18 +36,20 @@
             // 
             // OK
             // 
-            this.OK.Location = new System.Drawing.Point(93, 98);
+            this.OK.Location = new System.Drawing.Point(81, 77);
+            this.OK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OK.Name = "OK";
-            this.OK.Size = new System.Drawing.Size(94, 29);
+            this.OK.Size = new System.Drawing.Size(82, 22);
             this.OK.TabIndex = 0;
             this.OK.Text = "Ok!";
             this.OK.UseVisualStyleBackColor = true;
             // 
             // cancel
             // 
-            this.cancel.Location = new System.Drawing.Point(193, 98);
+            this.cancel.Location = new System.Drawing.Point(169, 77);
+            this.cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(94, 29);
+            this.cancel.Size = new System.Drawing.Size(82, 22);
             this.cancel.TabIndex = 1;
             this.cancel.Text = "Cancel";
             this.cancel.UseVisualStyleBackColor = true;
@@ -55,32 +57,34 @@
             // tbx_amount_Entered
             // 
             this.tbx_amount_Entered.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbx_amount_Entered.Location = new System.Drawing.Point(12, 53);
+            this.tbx_amount_Entered.Location = new System.Drawing.Point(10, 41);
+            this.tbx_amount_Entered.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbx_amount_Entered.Name = "tbx_amount_Entered";
-            this.tbx_amount_Entered.Size = new System.Drawing.Size(275, 39);
+            this.tbx_amount_Entered.Size = new System.Drawing.Size(241, 32);
             this.tbx_amount_Entered.TabIndex = 2;
             this.tbx_amount_Entered.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(10, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 40);
+            this.label1.Size = new System.Drawing.Size(139, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "How many to add\r\n(only supports numerics)";
             // 
             // How_many
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 139);
+            this.ClientSize = new System.Drawing.Size(262, 104);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbx_amount_Entered);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.OK);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(350, 200);
+            this.MaximumSize = new System.Drawing.Size(308, 160);
             this.MinimizeBox = false;
             this.Name = "How_many";
             this.ShowIcon = false;
