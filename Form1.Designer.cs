@@ -65,7 +65,7 @@
             this.pbx_Add_D4.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D4.TabIndex = 0;
             this.pbx_Add_D4.TabStop = false;
-            this.pbx_Add_D4.Click += new System.EventHandler(this.pbx_Add_D4_Click);
+            this.pbx_Add_D4.Click += new System.EventHandler(this.Add_Die_Clicked);
             // 
             // pbx_Add_D6
             // 
@@ -78,7 +78,7 @@
             this.pbx_Add_D6.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D6.TabIndex = 1;
             this.pbx_Add_D6.TabStop = false;
-            this.pbx_Add_D6.Click += new System.EventHandler(this.pbx_Add_D6_Click);
+            this.pbx_Add_D6.Click += new System.EventHandler(this.Add_Die_Clicked);
             // 
             // pbx_Add_D8
             // 
@@ -91,7 +91,7 @@
             this.pbx_Add_D8.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D8.TabIndex = 2;
             this.pbx_Add_D8.TabStop = false;
-            this.pbx_Add_D8.Click += new System.EventHandler(this.pbx_Add_D8_Click);
+            this.pbx_Add_D8.Click += new System.EventHandler(this.Add_Die_Clicked);
             // 
             // pbx_Add_D10
             // 
@@ -104,7 +104,7 @@
             this.pbx_Add_D10.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D10.TabIndex = 3;
             this.pbx_Add_D10.TabStop = false;
-            this.pbx_Add_D10.Click += new System.EventHandler(this.pbx_Add_D10_Click);
+            this.pbx_Add_D10.Click += new System.EventHandler(this.Add_Die_Clicked);
             // 
             // pbx_Add_D12
             // 
@@ -117,7 +117,7 @@
             this.pbx_Add_D12.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D12.TabIndex = 4;
             this.pbx_Add_D12.TabStop = false;
-            this.pbx_Add_D12.Click += new System.EventHandler(this.pbx_Add_D12_Click);
+            this.pbx_Add_D12.Click += new System.EventHandler(this.Add_Die_Clicked);
             // 
             // pbx_Add_D20
             // 
@@ -130,7 +130,7 @@
             this.pbx_Add_D20.Size = new System.Drawing.Size(52, 52);
             this.pbx_Add_D20.TabIndex = 5;
             this.pbx_Add_D20.TabStop = false;
-            this.pbx_Add_D20.Click += new System.EventHandler(this.pbx_Add_D20_Click);
+            this.pbx_Add_D20.Click += new System.EventHandler(this.Add_Die_Clicked);
             // 
             // amount_D4
             // 
@@ -290,7 +290,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dice Roller - For your really big numbers";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Add_D4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Add_D6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Add_D8)).EndInit();

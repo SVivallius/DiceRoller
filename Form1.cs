@@ -10,11 +10,6 @@ namespace DiceRoller
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             DiceRoller.ClearDice();
@@ -28,83 +23,41 @@ namespace DiceRoller
             ind_Rolls.Text = "0";
         }
 
-        private void pbx_Add_D4_Click(object sender, EventArgs e)
-        {
-            fetchAmount.ShowDialog();
-
-            if (fetchAmount.DialogResult == DialogResult.OK)
-            {
-                DiceRoller.AddDie(new D4());
-                amount_D4.Text = DiceRoller.CountDice(new D4()).ToString();
-            }
-        }
-
-        private void pbx_Add_D6_Click(object sender, EventArgs e)
-        {
-            fetchAmount.ShowDialog();
-
-            if (fetchAmount.DialogResult == DialogResult.OK)
-            {
-                DiceRoller.AddDie(new D6());
-                amount_D6.Text = DiceRoller.CountDice(new D6()).ToString();
-            }
-        }
-
-        private void pbx_Add_D8_Click(object sender, EventArgs e)
-        {
-            fetchAmount.ShowDialog();
-
-            if (fetchAmount.DialogResult == DialogResult.OK)
-            {
-                DiceRoller.AddDie(new D8());
-                amount_D8.Text = DiceRoller.CountDice(new D8()).ToString();
-            }
-        }
-
-        private void pbx_Add_D10_Click(object sender, EventArgs e)
-        {
-            fetchAmount.ShowDialog();
-
-            if (fetchAmount.DialogResult == DialogResult.OK)
-            {
-                DiceRoller.AddDie(new D10());
-                amount_D10.Text = DiceRoller.CountDice(new D10()).ToString();
-            }
-        }
-
-        private void pbx_Add_D12_Click(object sender, EventArgs e)
-        {
-            fetchAmount.ShowDialog();
-
-            if (fetchAmount.DialogResult == DialogResult.OK)
-            {
-                DiceRoller.AddDie(new D12());
-                amount_D12.Text = DiceRoller.CountDice(new D12()).ToString();
-            }
-        }
-
-        private void pbx_Add_D20_Click(object sender, EventArgs e)
-        {
-            fetchAmount.ShowDialog();
-
-            if (fetchAmount.DialogResult == DialogResult.OK)
-            {
-                DiceRoller.AddDie(new D20());
-                amount_D20.Text = DiceRoller.CountDice(new D20()).ToString();
-            }
-        }
-
         private void btn_Roll_Dice_Click(object sender, EventArgs e)
         {
             result_lbl.Text = DiceRoller.Roll().ToString();
 
-            ind_Rolls.Text = "";
+            string storeRolls = "";
             for (int i = 0; i < DiceRoller.indivRolls.Count; i++)
             {
-                ind_Rolls.Text = ind_Rolls.Text + DiceRoller.indivRolls[i].ToString();
+                storeRolls = storeRolls + DiceRoller.indivRolls[i].ToString();
                 if (i < DiceRoller.indivRolls.Count - 1)
                 {
-                    ind_Rolls.Text = ind_Rolls.Text + " + ";
+                    storeRolls = storeRolls + " + ";
+                }
+            }
+            ind_Rolls.Text = storeRolls;
+        }
+
+        private void Add_Die_Clicked(object sender, EventArgs e)
+        {
+            fetchAmount.ShowDialog();
+
+            if (fetchAmount.DialogResult == DialogResult.OK)
+            {
+                PictureBox diceClicked = (PictureBox)sender;
+                if (diceClicked != null && diceClicked.Name != null)
+                {
+                    switch (diceClicked.Name.Split('_')[2].ToUpper())
+                    {
+                        case "D4": DiceRoller.AddDie(new D4(), ref amount_D4); break;
+                        case "D6": DiceRoller.AddDie(new D6(), ref amount_D6); break;
+                        case "D8": DiceRoller.AddDie(new D8(), ref amount_D8); break;
+                        case "D10": DiceRoller.AddDie(new D10(), ref amount_D10); break;
+                        case "D12": DiceRoller.AddDie(new D12(), ref amount_D12); break;
+                        case "D20": DiceRoller.AddDie(new D20(), ref amount_D20); break;
+                        default: MessageBox.Show("Something went REALLY wrong.\nCheck your privilige."); break;
+                    }
                 }
             }
         }

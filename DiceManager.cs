@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,25 +14,18 @@ namespace DiceRoller
         static public List<int> indivRolls = new List<int>();
         static public int amtToAdd = 0;
 
-        static public void AddDie(Dice dice)
+        static public void AddDie(Dice dice, ref Label dieAmount)
         {
-            for (int i = 0; i < amtToAdd; amtToAdd--)
-            {
-                diceList.Add(dice);
-            }
+            var temp = Enumerable.Repeat(dice, amtToAdd);
+            diceList.AddRange(temp);
+            dieAmount.Text = DiceRoller.CountDice(dice).ToString();
+
+            amtToAdd = 0;
         }
 
         static public int CountDice(Dice selection)
         {
-            int tempAmount = 0;
-            foreach(Dice die in diceList)
-            {
-                if (die.sides == selection.sides)
-                {
-                    tempAmount++;
-                }
-            }
-            return tempAmount;
+            return diceList.Where(dice => dice.sides == selection.sides).Count();
         }
 
         static public void ClearDice()
@@ -44,7 +36,6 @@ namespace DiceRoller
         static public int Roll()
         {
             Random roll = new Random();
-            int total = 0;
             indivRolls.Clear();
 
             foreach (Dice dice in diceList)
@@ -52,13 +43,13 @@ namespace DiceRoller
                 int thisRoll = roll.Next(1, (dice.sides + 1));
 
                 indivRolls.Add(thisRoll);
-                total += thisRoll;
             }
+            int total = indivRolls.Sum();
 
             return total;
         }
     }
-    public class Dice
+    abstract public class Dice
     {
         internal int sides;
         public Dice()
